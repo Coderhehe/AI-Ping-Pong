@@ -13,3 +13,12 @@ display: inline-block;
 #header button{
     float: right;
 }
+
+#credit{
+    bottom:0;
+    background-color:chocolate;
+    color: whitesmoke;
+    position: sticky;
+    line-height: 2;
+    width: 100%;
+}
