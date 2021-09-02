@@ -37,7 +37,7 @@ function modelLoaded() {
 }
 
 function draw(){
-image();
+image(video,0,0,700,600);
 
  background(0); 
 
