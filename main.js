@@ -1,4 +1,6 @@
-
+rightwx=0;
+rightwy=0;
+srightw=0;
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -36,9 +38,21 @@ function modelLoaded() {
   console.log("Model Loaded");
 }
 
+function gotPoses(results) {
+  if (results.length > 0) {
+  rightwx=results[0].pose.rightWrist.x;
+  rightwy=results[0].pose.rightWrist.y;
+  srightw=results[0].pose.keypoints[10].score;
+  }
+}
+
 function draw(){
 image(video,0,0,700,600);
-
+if (srightw > 0.2) {
+  fill(5,150,25);
+stroke(5,150,25);
+circle(rightwx,rightwy,10)
+}
  background(0); 
 
  fill("black");
