@@ -1,3 +1,4 @@
+status="";
 rightwx=0;
 rightwy=0;
 srightw=0;
@@ -46,8 +47,17 @@ function gotPoses(results) {
   }
 }
 
+function start() {
+  status="true";
+  document.getElementById("status").innerHTML="Game Is Loaded";
+
+}
+
 function draw(){
-image(video,0,0,700,600);
+  if (status!="") {
+    
+  
+  image(video,0,0,700,600);
 if (srightw > 0.2) {
   fill(5,150,25);
 stroke(5,150,25);
@@ -62,7 +72,8 @@ circle(rightwx,rightwy,10)
  fill("black");
  stroke("black");
  rect(0,0,20,700);
- 
+
+
    //funtion paddleInCanvas call 
    paddleInCanvas();
  
@@ -90,7 +101,8 @@ circle(rightwx,rightwy,10)
    
    //function move call which in very important
     move();
-}
+  }
+  }
 
 
 
